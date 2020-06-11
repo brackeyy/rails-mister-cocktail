@@ -1,0 +1,9 @@
+<h1>Here is the cocktail 👀</h1>
+
+<p>---------------------------------</p>
+<p><strong>Cocktail:</strong> <%= @cocktail.name %> </p>
+<p><strong>Recipe:</strong></p>
+<% @cocktail.doses.each do |d| %>
+  <p> -> <%= d.ingredient.name %> ~ <%= d.description %></p>
+<% end %>
+
