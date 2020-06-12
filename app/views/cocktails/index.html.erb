@@ -5,12 +5,14 @@
 
 <h1>Here are all the cocktails 👀</h1>
 
-<% @cocktails.each do |c| %>
-  <p>---------------------------------</p>
-<p><strong>Cocktail:</strong> <%= c.name %> </p>
-  <p><strong>Recipe:</strong></p>
-  <% c.doses.each do |d| %>
-    <p> -> <%= d.ingredient.name %> ~ <%= d.description %> /p>
-    <p><%= link_to 'Delete', d, method: :delete, class: 'btn-sm btn-danger' %><</p>
+<div class="container">
+  <% @cocktails.each do |c| %>
+    <p>---------------------------------</p>
+  <p><strong>Cocktail:</strong> <%= c.name%> <%= link_to "Edit", c, method: :get, class: 'btn-sm btn-primary'%> </p>
+    <p><strong>Recipe:</strong></p>
+    <% c.doses.each do |d| %>
+      <p> -> <%= d.ingredient.name %> ~ <%= d.description %> /p>
+
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -1,9 +1,12 @@
 <h1>Here is the cocktail 👀</h1>
 
 <p>---------------------------------</p>
-<p><strong>Cocktail:</strong> <%= @cocktail.name %> </p>
+<p><strong>Cocktail:</strong> <%= @cocktail.name %> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: 'btn-sm btn-primary'%></p>
 <p><strong>Recipe:</strong></p>
 <% @cocktail.doses.each do |d| %>
-  <p> -> <%= d.ingredient.name %> ~ <%= d.description %></p>
+  <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
+  <p><%= link_to 'Delete', d, method: :delete, class: 'btn-sm btn-danger' %></p>
 <% end %>
+<br>
+<%= link_to "Back", cocktails_path %>
 
