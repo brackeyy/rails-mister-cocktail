@@ -14,21 +14,36 @@
 
   <div class="row">
 
-        <% @cocktails.each do |c| %>
-          <div class="col-sm-6">
-            <div class="cocktail-card">
-              <h4><strong>Cocktail:</strong> </h4>
-              <h4> <%= c.name%> <%= link_to "Edit", c, method: :get, class: 'btn-sm btn-primary'%> </h4>
-              <h4>_________________ </h4>
-              <p><strong>Recipe:</strong></p>
-              <% c.doses.each do |d| %>
-                <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
-              <% end %>
-            </div>
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-6">
+        <% if cocktail.photo.attached? %>
+
+          <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>');">
+            <h4> <%= cocktail.name%> <%= link_to "Edit", cocktail_path(cocktail), method: :get, class: 'btn-sm btn-primary'%> </h4>
+            <h4>_________________ </h4>
+            <p><strong>Recipe:</strong></p>
+            <% cocktail.doses.each do |d| %>
+              <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
+            <% end %>
           </div>
+
+        <% else %>
+
+          <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random);">
+            <h4><strong>Cocktail:</strong> </h4>
+            <h4> <%= cocktail.name%> <%= link_to "Edit", cocktail_path(cocktail), method: :get, class: 'btn-sm btn-primary'%> </h4>
+            <h4>_________________ </h4>
+            <p><strong>Recipe:</strong></p>
+            <% cocktail.doses.each do |d| %>
+              <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
+            <% end %>
+          </div>
+
         <% end %>
 
-  </div>
 
+      </div>
+    <% end %>
 
+   </div>
 </div>

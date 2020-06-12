@@ -1,7 +1,6 @@
 .cocktail-card{
   background: white;
-  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("<%= cl_image_path @article.photo.key, height: 300, width: 400, crop: :fill %>");
-  border-radius: 5px;
+  background-size: cover;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
   padding: 10px;
   width: 300px;
