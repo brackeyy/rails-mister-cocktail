@@ -1,12 +1,19 @@
-<h1>Feel free to create a new cocktail 🐷:</h1>
-<br>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3323682/pexels-photo-3323682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+    <h1>Create your own Cocktail!</h1>
+    <br>
+    <p> <%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-primary'%></p>
+</div>
+
+<div class="headline">
+  <h3>Add the name:</h3>
+</div>
 
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3">
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
-        <%= f.button :submit %>
+        <%= f.button :submit%>
       <% end %>
     </div>
   </div>

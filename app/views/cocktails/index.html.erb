@@ -1,18 +1,34 @@
 
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3323682/pexels-photo-3323682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+    <h1>Welcome to <strong>Mr Cocktail</strong></h1>
+    <p> Get shitfaced and more</p>
+    <p> <%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-primary'%></p>
+</div>
 
-
-
-<h1>Here are all the cocktails 👀</h1>
+<div class="headline">
+  <h3>All cocktails:</h3>
+</div>
 
 <div class="container">
-  <% @cocktails.each do |c| %>
-    <p>---------------------------------</p>
-  <p><strong>Cocktail:</strong> <%= c.name%> <%= link_to "Edit", c, method: :get, class: 'btn-sm btn-primary'%> </p>
-    <p><strong>Recipe:</strong></p>
-    <% c.doses.each do |d| %>
-      <p> -> <%= d.ingredient.name %> ~ <%= d.description %> /p>
 
-    <% end %>
-  <% end %>
+  <div class="row">
+
+        <% @cocktails.each do |c| %>
+          <div class="col-sm-6">
+            <div class="cocktail-card">
+              <h4><strong>Cocktail:</strong> </h4>
+              <h4> <%= c.name%> <%= link_to "Edit", c, method: :get, class: 'btn-sm btn-primary'%> </h4>
+              <h4>_________________ </h4>
+              <p><strong>Recipe:</strong></p>
+              <% c.doses.each do |d| %>
+                <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+  </div>
+
+
 </div>
