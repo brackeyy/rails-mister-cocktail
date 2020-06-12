@@ -25,6 +25,7 @@
             <% cocktail.doses.each do |d| %>
               <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
             <% end %>
+            <%= link_to 'Delete', cocktail, method: :delete, class: 'btn-sm btn-danger' %>
           </div>
 
         <% else %>
@@ -37,6 +38,7 @@
             <% cocktail.doses.each do |d| %>
               <p> -> <%= d.ingredient.name %> ~ <%= d.description %> </p>
             <% end %>
+            <%= link_to 'Delete', cocktail, method: :delete, class: 'btn-sm btn-danger' %>
           </div>
 
         <% end %>
