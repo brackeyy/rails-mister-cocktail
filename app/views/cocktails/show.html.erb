@@ -21,6 +21,7 @@
         <p><strong>Recipe:</strong></p>
         <% @cocktail.doses.each do |d| %>
         <p> -> <%= d.ingredient.name %> ~ <em>Amount:</em> <%= d.description %> <%= link_to 'Delete', d, method: :delete, class: 'btn-sm btn-danger' %> </p>
+        <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
       </div>
 
