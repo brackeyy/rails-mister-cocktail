@@ -24,10 +24,9 @@ Ingredient.create(name: "Orange juice")
 Ingredient.create(name: "Strawberry")
 Ingredient.create(name: "Passionfruit")
 Ingredient.create(name: "Ron")
-Ingredient.create(name: "Expresso coffe")
-Ingredient.create(name: "Coffee liquor")
-Ingredient.create(name: "Cream")
 Ingredient.create(name: "Amore")
 Ingredient.create(name: "Sexual tension")
+Ingredient.create(name: "Expresso coffe")
+
 
 puts "3.Ingredients created!"
